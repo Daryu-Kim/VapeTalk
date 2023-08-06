@@ -1,11 +1,11 @@
 <script lang="ts">
-    import HomePage from "./pages/Home.svelte";
-    import AboutPage from "./pages/About/index.svelte";
+    import SplashRoute from "./routes/Splash/index.svelte";
+    import AboutPage from "./routes/About/index.svelte";
     import Router from "svelte-spa-router";
-    import NotFound from "./pages/NotFound.svelte";
+    import NotFound from "./routes/NotFound.svelte";
 
     export const routes = {
-        '/': HomePage,
+        '/': SplashRoute,
         '/about': AboutPage,
         '/*': NotFound,
     };
