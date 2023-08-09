@@ -1,14 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+	--background-color: #FFF;
+	--text-color: #161616;
+	--inverse-text-color: #FFF;
+	--error-color: #F66;
+	--divider-color: #CCC;
+	--gradient-zero-color: #FF3CAC;
+	--gradient-half-color: #562B7C;
+	--gradient-full-color: #2B86C5;
+	--form-background-color: #FFF;
+	--shadow-color: #999;
+	--footer-background-color: #f0f0f0;
+	--footer-sub-color: #e0e0e0;
+}
+
+.swiper {
+	width: 100%;
+}
+
+.swiper-button-prev, .swiper-button-next {
+	background-color: white;
+	opacity: 0.5;
+	padding: 1.5rem .5rem;
+	border-radius: 2rem;
+	color: black !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+	font-size: 1.1rem !important;
+	font-weight: 500 !important;
+}
+
+.swiper-pagination-bullet {
+	background: var(--gradient-full-color) !important;
+}
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 100ms ease-in-out;
+	color: var(--text-color);
+	user-select: none;
+}
+
+html {
+	font-size: 10px;
+}
+
 html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+	display: none;
 }
 
 body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
+	background-color: var(--background-color);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
@@ -32,9 +89,6 @@ label {
 input, button, select, textarea {
 	font-family: inherit;
 	font-size: inherit;
-	-webkit-padding: 0.4em 0;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
 	border: 1px solid #ccc;
 	border-radius: 2px;
@@ -60,4 +114,51 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color: #161616;
+		--text-color: #FFF;
+		--inverse-text-color: #161616;
+		--divider-color: #363636;
+		--form-background-color: #202020;
+		--shadow-color: #101010;
+		--footer-background-color: #333;
+		--footer-sub-color: #202020;
+	}
+}
+
+@media screen and (max-width: 319px) {
+/* Mobile-XS Size */
+	html {
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+/* Mobile-S Size */
+}
+
+@media screen and (min-width: 375px) and (max-width: 424px) {
+/* Mobile-M Size */
+}
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+/* Mobile-L Size */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* Tablet Size */
+	html {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+/* Laptop Size */
+}
+
+@media screen and (min-width: 1440px) {
+/* Desktop Size */
 }

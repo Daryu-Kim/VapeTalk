@@ -1,8 +1,9 @@
 <script lang="ts">
-    import SplashRoute from "./routes/Splash/index.svelte";
-    import AboutPage from "./routes/About/index.svelte";
+    import SplashRoute from "./views/Splash.svelte";
+    import AboutPage from "./views/About.svelte";
     import Router from "svelte-spa-router";
-    import NotFound from "./routes/NotFound.svelte";
+    import NotFound from "./views/NotFound.svelte";
+    import {FlatToast, ToastContainer} from "svelte-toasts";
 
     export const routes = {
         '/': SplashRoute,
@@ -12,7 +13,14 @@
 </script>
 
 <main>
-    <Router {routes} />
+    <Router {routes}/>
+    <ToastContainer id="asdf" let:data={data}>
+        <FlatToast {data}/>
+    </ToastContainer>
 </main>
 
-<style></style>
+<style lang="scss">
+  main {
+    position: relative;
+  }
+</style>
