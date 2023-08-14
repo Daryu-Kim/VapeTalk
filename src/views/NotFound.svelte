@@ -7,6 +7,7 @@
     import {Autoplay, Navigation, Pagination} from "swiper";
     import Footer from "../components/Footer.svelte";
     import ScrollButton from "../components/ScrollButton.svelte";
+    import BottomNavigationBar from "../components/BottomNavigationBar.svelte";
 </script>
 
 <main>
@@ -35,7 +36,12 @@
             <SwiperSlide><div class="slide">Slide 4</div></SwiperSlide>
         </Swiper>
     </div>
-    <Footer />
+
+    {#if window.matchMedia('(max-width: 1024px)').matches}
+        <BottomNavigationBar />
+    {:else}
+        <Footer />
+    {/if}
     <ScrollButton />
 </main>
 
@@ -47,9 +53,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 4.8rem - 17.75rem);
+    min-height: calc(100vh - 4.8rem - 4.8rem);
     > img {
-      width: 8rem;
+      width: 7.2rem;
       fill: var(--error-color);
     }
     > .error-title {
@@ -71,9 +77,14 @@
     }
     .slide {
       background-color: var(--divider-color);
-      border-radius: .8rem;
       padding: 1.6rem 2.4rem;
       height: 24rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .content {
+      min-height: calc(100vh - 4.8rem - 17.75rem);
     }
   }
 </style>

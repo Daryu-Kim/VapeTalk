@@ -3,11 +3,15 @@
     import AboutPage from "./views/About.svelte";
     import Router from "svelte-spa-router";
     import NotFound from "./views/NotFound.svelte";
+    import LoginPage from "./views/Login.svelte";
     import {FlatToast, ToastContainer} from "svelte-toasts";
+    import JoinPage from "./views/Join.svelte";
 
     export const routes = {
         '/': SplashRoute,
         '/about': AboutPage,
+        '/login': LoginPage,
+        '/join': JoinPage,
         '/*': NotFound,
     };
 </script>

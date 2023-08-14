@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 :root {
 	--background-color: #FFF;
@@ -17,6 +17,7 @@
 
 .swiper {
 	width: 100%;
+	border-radius: .8rem;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -36,6 +37,41 @@
 	background: var(--gradient-full-color) !important;
 }
 
+.toast-container {
+	width: calc(100% - 4.8rem) !important;
+	top: 1.6rem !important;
+}
+
+.st-toast {
+	width: 100% !important;
+	padding: 0.8rem !important;
+	padding-left: 1.2rem !important;
+	border-width: .4rem !important;
+}
+
+.st-toast.light {
+	background-color: white !important;
+}
+
+.st-toast-title {
+	font-size: 1.6rem !important;
+}
+
+.st-toast-description {
+	font-size: 1.2rem !important;
+	margin-top: 1rem !important;
+}
+
+.st-toast-icon {
+	width: 2.4rem !important;
+	height: 2.4rem !important;
+}
+
+.st-toast-close-btn > svg {
+	width: 1.6rem !important;
+	height: 1.6rem !important;
+}
+
 * {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 400;
@@ -45,6 +81,12 @@
 	transition: all 100ms ease-in-out;
 	color: var(--text-color);
 	user-select: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+	display: none;
 }
 
 html {
@@ -56,12 +98,6 @@ html, body {
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-	display: none;
 }
 
 body {
@@ -96,6 +132,44 @@ input, button, select, textarea {
 
 input:disabled {
 	color: #ccc;
+}
+
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	position: relative;
+	width: 1.6rem;
+	height: 1.6rem;
+	cursor: pointer;
+	outline: none !important;
+	border: .1rem solid var(--footer-sub-color);
+	border-radius: .4rem;
+	background: var(--footer-background-color);
+}
+
+input[type="checkbox"]::before {
+	content: "\2713";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	overflow: hidden;
+	transform: scale(0) translate(-50%, -50%);
+	line-height: 1;
+	font-size: 1.4rem;
+}
+
+input[type="checkbox"]:hover {
+	border-color: rgba(170, 170, 170, 0.5);
+}
+
+input[type="checkbox"]:checked {
+	background-color: var(--gradient-full-color);
+	border-color: rgba(255, 255, 255, 0.3);
+	color: white;
+}
+
+input[type="checkbox"]:checked::before {
+	border-radius: .4rem;
+	transform: scale(1) translate(-50%, -50%)
 }
 
 button {
@@ -138,14 +212,23 @@ button:focus {
 
 @media screen and (min-width: 320px) and (max-width: 374px) {
 /* Mobile-S Size */
+	html {
+		font-size: 10px;
+	}
 }
 
 @media screen and (min-width: 375px) and (max-width: 424px) {
 /* Mobile-M Size */
+	html {
+		font-size: 10px;
+	}
 }
 
 @media screen and (min-width: 425px) and (max-width: 767px) {
 /* Mobile-L Size */
+	html {
+		font-size: 12px;
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -157,8 +240,14 @@ button:focus {
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
 /* Laptop Size */
+	html {
+		font-size: 14px;
+	}
 }
 
 @media screen and (min-width: 1440px) {
 /* Desktop Size */
+	html {
+		font-size: 14px;
+	}
 }

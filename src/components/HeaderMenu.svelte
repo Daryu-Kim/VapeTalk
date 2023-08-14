@@ -13,14 +13,13 @@
         {/each}
     </ul>
 
-    <hr transition:scale={{ duration: 750, easing: quadOut, opacity: 1 }} />
+    <hr transition:scale={{ duration: 350, easing: quadOut, opacity: 1 }} />
 {/if}
 
 <style lang="scss">
   ul {
-    //display: flex;
-    //align-items: center;
-    //gap: 1.6rem;
+    background-color: var(--footer-sub-color);
+    margin-top: 4.8rem;
     list-style: none;
 
     > li {

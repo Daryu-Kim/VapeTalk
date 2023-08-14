@@ -16,7 +16,7 @@
         <p>전화: 010-6894-1916</p>
         <div>
             <p>E-mail: dev_daryu@kakao.com</p>
-            <p>ⓒ Daryu-Kim. ALL rights reserved.</p>
+            <p class="copyright">ⓒ Daryu-Kim. ALL rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -61,7 +61,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        > .copyright {
+          display: none;
+        }
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .copyright {
+      display: block;
     }
   }
 </style>

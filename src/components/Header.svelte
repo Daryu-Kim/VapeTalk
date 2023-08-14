@@ -2,15 +2,14 @@
     import {link} from 'svelte-spa-router';
     import {Hamburger} from "svelte-hamburgers";
     import HeaderMenu from "./HeaderMenu.svelte";
+    import Logo from "./Logo.svelte";
 
     let open;
 </script>
 
 <div>
     <header>
-        <a use:link href="/home">
-            <img class="header-logo" src="assets/ic_logo_text.svg">
-        </a>
+        <Logo />
         {#if window.matchMedia('(min-width: 1024px)').matches}
             <HeaderMenu />
         {:else}
